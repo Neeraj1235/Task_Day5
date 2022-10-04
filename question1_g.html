@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+            <!-- Remove an array by k times -->
+    <script>
+
+              // Using iife function
+        (
+            function (nums, k) {
+                function reverse(arr, start, end) {
+                    while (start < end) {
+                        [arr[start], arr[end]] = [arr[end], arr[start]];
+                        start++;
+                        end--;
+                    }
+                }
+                console.log(nums, k)
+                k %= nums.length;
+                reverse(nums, 0, (nums.length - 1));
+                reverse(nums, 0, (k - 1));
+                reverse(nums, k, (nums.length - 1));
+
+                return nums;
+            })([1, 2, 3, 4, 5], 2)
+
+
+              // Using anonymous function
+        var rotate = function (nums, k) {
+            function reverse(arr, start, end) {
+                while (start < end) {
+                    [arr[start], arr[end]] = [arr[end], arr[start]];
+                    start++;
+                    end--;
+                }
+            }
+            console.log(nums, k)
+            k %= nums.length;
+            reverse(nums, 0, (nums.length - 1));
+            reverse(nums, 0, (k - 1));
+            reverse(nums, k, (nums.length - 1));
+
+            return nums;
+        }
+            rotate([1, 2, 3, 4, 5, 6], 2)
+
+    </script>
+</body>
+
+</html>
