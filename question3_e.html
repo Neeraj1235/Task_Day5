@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Return all the Palindromes in an array -->
+    <script>
+
+        // Using arrow function
+        var arrPalindrome = (arr) => {
+            var res = "";
+            var ans = "";
+            for (i = 0; i < arr.length; i++) {
+                res += arr[i];
+                var count = 0
+
+                for (j = 0; j < res.length; j++) {
+                    if (res[j] === res[((res.length - 1) - j)]) {
+                        count++
+
+                    }
+                }
+                if (count === res.length) {
+                    ans += res + " "
+                }
+                res = "";
+            }
+            console.log(ans)
+        }
+        arrPalindrome([1, 11, 343, 200, 798, 999, 7171])
+
+    </script>
+</body>
+
+</html>
